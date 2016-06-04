@@ -1,0 +1,6 @@
+# react-
+react经验分享
+
+react逻辑：
+1.页面加载直接触发的方法，componentDidmount通过调用mapdispatchtoprops中的动作来请求数据，走axios方法，同时经过promiseMiddware中间件，把请求回来的数据放到json中，同时取得用户数据。这时候action方法返回type和promise，这时候就把数据存储到reducer中，通过json.data取得请求回来的数据。然后在组件中，通过mapstatetoprops把reducer中的数据转化为props，通过props把数据传输到子组件中。
+2.通过mapdispatchtoprops和bindactioncreators然组件在没有意识到store的情况下把动作引入组件，绑定到组件中，这些动作可以归类为用户交互行为动作，需要用户触发的事件，然后把事件传递到子组件中。
